@@ -16,7 +16,7 @@ function mostrarProdutos() {
 // literalmente cria a lista de produtos.
 
     if (produtos.length === 0) {
-        listaProdutos.innerHTML = "<p>Nenhum produto cadastrado.</p>";
+       listaProdutos.innerHTML = '<p class="sem-produtos">Nenhum produto cadastrado.</p>';
         return;
     }
 
