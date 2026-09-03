@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Despesas | Eloy </title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+        <img src="assets/logo-eloy.png" alt="Logo da Eloy">
+
+        <h1>Eloy</h1>
+        <p>Sua empresa organizada. Sua rotina mais leve.</p>
+
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="vendas.html">Vendas</a>
+        <a href="despesas.html" class="ativo">Despesas</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="clientes.html">Clientes</a>
+    </nav>
+
+    <main>
+<section>
+            <h2>Despesas</h2>
+            <p>Adicione uma nova despesa ao seu controle</p>
+        </section>
+<br>
+<div class="painel-despesas">
+
+    <section class="nova-despesa">
+    <h2>Nova despesa</h2>
+
+<form class="form-despesa" id="form-despesa">
+    <label for="valor">Valor da despesa</label>
+    <input type="number" id="valor" step="0.01" placeholder="Ex: 50,00" required>
+
+    <label for="descricao">Descrição</label>
+    <input type="text" id="descricao" placeholder="Ex: Compra de embalagens" required>
+
+    <label for="data">Data de compra</label>
+    <input type="date" id="data" required>
+
+
+    <button type="submit">Registrar despesa</button>
+</form>
+    <p id="mensagem-despesa"></p>
+</section>
+
+<section class="lista-despesas">
+    <h2>Últimas despesas</h2>
+    <div id="lista-despesas"></div>
+</section>
+</div>
+
+    </main>
+
+    <script src="js/despesas.js"></script>
+
+</body>
+</html>

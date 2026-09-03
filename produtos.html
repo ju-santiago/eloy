@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Produtos | Eloy </title>
+
+        <link rel="stylesheet" href="css/style.css">
+        
+    </head>
+    <body>
+        
+<header>
+
+<div class="logo">
+
+         <img src="assets/logo-eloy.png" alt="Logo da Eloy">
+
+         <h1>Eloy</h1>
+         <p>Sua empresa organizada. Sua rotina mais leve.</p>
+ </div>
+</header>
+       
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="vendas.html">Vendas</a>
+            <a href="despesas.html">Despesas</a>
+            <a href="produtos.html" class="ativo">Produtos</a>
+            <a href="clientes.html">Clientes</a>
+        </nav>
+        <!--nav serve para criar um menu de navegação entre os links-->
+
+<main>
+    <section class="cadastro-produto">
+        <h2>Produtos</h2>
+        <p>Adicione um novo produto ao seu controle</p>
+        <!--section serve para separar os elementos em uma mesma página-->
+        <form id="form-produto">
+
+        <div class="campo">
+        <label for="nome-produto">
+
+        Nome do produto ou serviço
+
+        </label>
+        <!--label serve para exemplificar qual o propósito do campo-->
+
+                <input
+                    type="text"
+                    id="nome-produto"
+                    placeholder="Ex.: Bolo de cenoura"
+                    required
+                >
+        <!--input é a inserção de um dado, abaixo constam quais dados em específicos devem ser inseridos-->
+
+            </div>
+
+            <div class="campo">
+                <label for="preco-produto">Preço</label>
+
+                <input
+                    type="number"
+                    id="preco-produto"
+                    placeholder="Ex.: 35,00"
+                    min="0"
+                    step="0.01"
+                    required
+                >
+        <!--o comando required torna obrigatório o preenchimento do campo-->
+
+            </div>
+
+            <div class="campo">
+                <label for="categoria-produto">Categoria</label>
+
+                <input
+                    type="text"
+                    id="categoria-produto"
+                    placeholder="Ex.: Bolos"
+                    required
+                >
+            </div>
+
+            <button type="submit">Cadastrar produto</button>
+        </form>
+    </section>
+
+    <section class="produtos-cadastrados">
+        <h2>Produtos cadastrados</h2>
+
+        <div id="lista-produtos">
+            <p>Nenhum produto cadastrado.</p>
+        </div>
+    </section>
+
+        </main>
+
+    <script src="js/produtos.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vendas | Eloy </title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+        <img src="assets/logo-eloy.png" alt="Logo da Eloy">
+
+        <h1>Eloy</h1>
+        <p>Sua empresa organizada. Sua rotina mais leve.</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="vendas.html" class="ativo">Vendas</a>
+        <a href="despesas.html">Despesas</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="clientes.html">Clientes</a>
+    </nav>
+
+    <main>
+<section>
+            <h2>Vendas</h2>
+            <p>Adicione uma nova venda ao seu controle</p>
+        </section>
+<br>
+<div class="painel-vendas">
+
+    <section class="nova-venda">
+    <h2>Nova venda</h2>
+
+<form class="form-venda" id="form-venda">
+
+    <label for="valor">Valor da venda</label>
+
+    <input
+        type="number"
+        id="valor"
+        min="0"
+        step="0.01"
+        placeholder="Ex: 50,00"
+        required
+    >
+
+    <select id="produto-venda">
+        <option value="">Selecione um produto</option>
+        <option value="personalizado">Outro valor</option>
+    </select>
+
+    <label for="quantidade">Quantidade</label>
+
+    <input
+    type="number"
+    id="quantidade"
+    min="1"
+    value="1"
+    >
+
+    <label for="cliente">Cliente</label>
+    <input type="text" id="cliente" placeholder="Nome do(a) cliente">
+
+
+    <label for="data">Data da venda</label>
+    <input type="date" id="data" required>
+
+
+    <button type="submit">Registrar venda</button>
+</form>
+    <p id="mensagem-venda"></p>
+</section>
+
+<section class="lista-vendas">
+    <h2>Últimas vendas</h2>
+    <div id="lista-vendas"></div>
+</section>
+</div>
+
+    </main>
+
+    <script src="js/vendas.js"></script>
+
+</body>
+</html>
