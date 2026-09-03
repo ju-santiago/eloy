@@ -392,6 +392,10 @@ main p{
     background-color: var(--cor-principal-escura);
 }
 
+.sem-produtos {
+    text-align: center;
+}
+
 #lista-produtos {
     display: flex;
     grid-template-columns: repeat(2, 1fr);
