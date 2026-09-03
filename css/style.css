@@ -399,6 +399,7 @@ main p{
     margin-top: 25px;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 .item-produto {
