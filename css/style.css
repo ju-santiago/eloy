@@ -478,6 +478,10 @@ main p {
     font-weight: 700 !important;
 }
 
+.produtos-cadastrados {
+    margin-top: 76px;
+}
+
 /* Responsividade para mobile */
 
 @media (max-width: 800px) {
