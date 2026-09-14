@@ -12,20 +12,20 @@
     --cor-perigo: #a65369;
     --cor-perigo-clara: #f8e8ed;
     --branco: #fef7ff;
-}
+    }
 
 body{
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     font-family: Arial, sans-serif;
     margin: 0;
-}
+    }
 
 header{
     background-color: var(--cor-fundo-claro);
     padding: 24px 40px;
     text-align: center;
-}
+    }
 
 header h1{
     color: var(--cor-principal);
@@ -34,7 +34,7 @@ header h1{
     font-weight: 800;
     letter-spacing: 1px;
     font-family: "DM Serif Display", serif;
-}
+    }
 
 header p{
     font-family: "DM Sans", sans-serif;
@@ -42,7 +42,7 @@ header p{
     font-size: 15px;
     letter-spacing: 0.5px;
     font-weight: 300;
-}
+    }
 
 .ativo{
     color: var(--cor-principal-escura);
@@ -51,7 +51,7 @@ header p{
     border-bottom: 2px solid var(--cor-principal-escura);
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
-}
+    }
 
 nav{
     background-color: var(--branco);
@@ -61,15 +61,15 @@ nav{
     justify-content: center;
     gap: 48px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-}
+    }
 
 nav a{
-padding: 16px 40px;
-color: var(--cor-principal);
-text-decoration: none;
-margin-right: 24px;
-font-weight: 600;
-}
+   padding: 16px 40px;
+   color: var(--cor-principal);
+   text-decoration: none;
+   margin-right: 24px;
+   font-weight: 600;
+   }
 
 nav a:hover {
     color: var(--cor-principal-escura);
@@ -77,11 +77,11 @@ nav a:hover {
     border-radius: 8px;
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
-}
+    }
 
 main{
     padding: 32px 40px;
-}
+    }
 
 main h2{
     text-align: center;
@@ -90,7 +90,7 @@ main h2{
     margin-bottom: 20px;
     margin-left: 8px;
     margin-right: 8px;
-}
+    }
 
 main p{
     text-align: center;
@@ -100,13 +100,13 @@ main p{
     margin-bottom: 30px;
     margin-left: 8px;
     margin-right: 8px;
-}
+    }
 
 .resumo{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-}
+    }
 
 .card{
     background-color: var(--cor-card);
@@ -114,12 +114,12 @@ main p{
     padding: 28px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+    }
 
 .card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-}
+    }
 
 .card h3 {
     margin-top: 0;
@@ -127,14 +127,14 @@ main p{
     color: var(--cor-principal);
     font-size: 18px;
     text-align: center;
-}
+    }
 
 .card p {
     margin: 0;
     font-size: 28px;
     font-weight: bold;
     color: var(--cor-texto);
-}
+    }
 
 .form-venda button,
 .form-despesa button{
@@ -146,14 +146,14 @@ main p{
     font-size: 16px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+    }
 
 .form-venda button:hover,
 .form-despesa button:hover{
     background-color: var(--cor-principal-escura);
     transform: translateY(-4px);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-}
+    }
 
 .form-venda,
 .form-despesa{
@@ -169,19 +169,19 @@ main p{
     gap: 10px;
 
     max-width: 700px;
-}
+    }
 
 .form-venda:hover,
 .form-despesa:hover{
     transform: translateY(-2px);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-}
+    }
 
 .form-venda label,
 .form-despesa label{
     font-weight: 600;
     color: var(--cor-principal-escura);
-}
+    }
 
 .form-venda input,
 .form-despesa input {
@@ -189,14 +189,14 @@ main p{
     border: 1px solid var(--cor-fundo-claro);
     border-radius: 8px;
     font-size: 16px;
-}
+    }
 
 .form-venda input:focus,
 .form-despesa input:focus{
     border-color: var(--cor-principal-escura);
     outline: none;
     box-shadow: inset 0 1px 3px rgba(111, 75, 139, 0.15);
-}
+    }
 
 .item-venda,
 .item-despesa{
@@ -206,16 +206,16 @@ main p{
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     margin-bottom: 14px;
     border-left: 4px solid var(--cor-principal-escura);
-}
+    }
 
 .item-venda p{
     margin: 14px 0;
-}
+    }
 
 .item-venda:hover{
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
+    }
 
 .painel-vendas,
 .painel-despesas{
@@ -223,13 +223,13 @@ main p{
     grid-template-columns: 0.9fr 1.1fr;
     gap: 30px;
     align-items: start;
-}
+    }
 
 .nova-venda h2,
 .lista-vendas h2 {
     margin-top: 0;
     margin-bottom: 20px;
-}
+    }
 
 #mensagem-venda {
     display: none;
@@ -251,7 +251,7 @@ main p{
     font-size: 18px;
 
     z-index: 1000;
-}
+    }
 
 .btn-excluir {
     background-color: var(--cor-perigo);
@@ -445,7 +445,7 @@ main p{
     color: var(--cor-principal) !important;
     font-size: 20px !important;
     font-weight: 700 !important;
-}
+    }
 
 .painel-produtos { 
     display: grid;
