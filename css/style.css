@@ -434,6 +434,12 @@ main p{
     text-align: center;
 }
 
+.painel-produtos { 
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 40px;
+    align-items: start;
+
     /* Responsividade p mobile */
 
     @media (max-width: 800px) {
