@@ -12,48 +12,48 @@
     --cor-perigo: #a65369;
     --cor-perigo-clara: #f8e8ed;
     --branco: #fef7ff;
-    }
+}
 
-body{
+body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     font-family: Arial, sans-serif;
     margin: 0;
-    }
+}
 
-header{
+header {
     background-color: var(--cor-fundo-claro);
     padding: 24px 40px;
     text-align: center;
-    }
+}
 
-header h1{
+header h1 {
     color: var(--cor-principal);
     margin: 0;
     font-size: 46px;
     font-weight: 800;
     letter-spacing: 1px;
     font-family: "DM Serif Display", serif;
-    }
+}
 
-header p{
+header p {
     font-family: "DM Sans", sans-serif;
     color: var(--cor-texto-suave);
     font-size: 15px;
     letter-spacing: 0.5px;
     font-weight: 300;
-    }
+}
 
-.ativo{
+.ativo {
     color: var(--cor-principal-escura);
     border-radius: 8px;
     font-weight: bold;
     border-bottom: 2px solid var(--cor-principal-escura);
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
-    }
+}
 
-nav{
+nav {
     background-color: var(--branco);
     text-align: center;
     padding: 14px 40px;
@@ -61,15 +61,15 @@ nav{
     justify-content: center;
     gap: 48px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-    }
+}
 
-nav a{
-   padding: 16px 40px;
-   color: var(--cor-principal);
-   text-decoration: none;
-   margin-right: 24px;
-   font-weight: 600;
-   }
+nav a {
+    padding: 16px 40px;
+    color: var(--cor-principal);
+    text-decoration: none;
+    margin-right: 24px;
+    font-weight: 600;
+}
 
 nav a:hover {
     color: var(--cor-principal-escura);
@@ -77,22 +77,22 @@ nav a:hover {
     border-radius: 8px;
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
-    }
+}
 
-main{
+main {
     padding: 32px 40px;
-    }
+}
 
-main h2{
+main h2 {
     text-align: center;
     color: var(--cor-principal-escura);
     margin-top: 0;
     margin-bottom: 20px;
     margin-left: 8px;
     margin-right: 8px;
-    }
+}
 
-main p{
+main p {
     text-align: center;
     color: var(--cor-texto);
     font-size: 16px;
@@ -100,26 +100,28 @@ main p{
     margin-bottom: 30px;
     margin-left: 8px;
     margin-right: 8px;
-    }
+}
 
-.resumo{
-    display:grid;
+/* Dashboard */
+
+.resumo {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    }
+}
 
-.card{
+.card {
     background-color: var(--cor-card);
     border-radius: 16px;
     padding: 28px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+}
 
 .card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-    }
+}
 
 .card h3 {
     margin-top: 0;
@@ -127,17 +129,19 @@ main p{
     color: var(--cor-principal);
     font-size: 18px;
     text-align: center;
-    }
+}
 
 .card p {
     margin: 0;
     font-size: 28px;
     font-weight: bold;
     color: var(--cor-texto);
-    }
+}
+
+/* Formulários de vendas e despesas */
 
 .form-venda button,
-.form-despesa button{
+.form-despesa button {
     background-color: var(--cor-principal);
     color: var(--cor-fundo);
     border: none;
@@ -146,22 +150,21 @@ main p{
     font-size: 16px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+}
 
 .form-venda button:hover,
-.form-despesa button:hover{
+.form-despesa button:hover {
     background-color: var(--cor-principal-escura);
     transform: translateY(-4px);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-    }
+}
 
 .form-venda,
-.form-despesa{
+.form-despesa {
     background-color: var(--cor-fundo-claro);
     padding: 28px;
     border-radius: 14px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     display: flex;
@@ -169,19 +172,19 @@ main p{
     gap: 10px;
 
     max-width: 700px;
-    }
+}
 
 .form-venda:hover,
-.form-despesa:hover{
+.form-despesa:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-    }
+}
 
 .form-venda label,
-.form-despesa label{
+.form-despesa label {
     font-weight: 600;
     color: var(--cor-principal-escura);
-    }
+}
 
 .form-venda input,
 .form-despesa input {
@@ -189,49 +192,58 @@ main p{
     border: 1px solid var(--cor-fundo-claro);
     border-radius: 8px;
     font-size: 16px;
-    }
+}
 
 .form-venda input:focus,
-.form-despesa input:focus{
+.form-despesa input:focus {
     border-color: var(--cor-principal-escura);
     outline: none;
     box-shadow: inset 0 1px 3px rgba(111, 75, 139, 0.15);
-    }
+}
+
+/* Cards de vendas, despesas e produtos */
 
 .item-venda,
-.item-despesa{
+.item-despesa,
+.item-produto {
     background-color: var(--cor-fundo-claro);
     border-radius: 10px;
     padding: 12px 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     margin-bottom: 14px;
     border-left: 4px solid var(--cor-principal-escura);
-    }
 
-.item-venda p{
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item-venda:hover,
+.item-despesa:hover,
+.item-produto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.item-venda p {
     margin: 14px 0;
-    }
+}
 
-.item-venda:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-    }
+/* Painéis */
 
 .painel-vendas,
-.painel-despesas{
+.painel-despesas {
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
     gap: 30px;
     align-items: start;
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
-    }
+}
 
 .nova-venda h2,
 .lista-vendas h2 {
     margin-top: 0;
     margin-bottom: 20px;
-    }
+}
+
+/* Mensagem de venda */
 
 #mensagem-venda {
     display: none;
@@ -253,7 +265,9 @@ main p{
     font-size: 18px;
 
     z-index: 1000;
-    }
+}
+
+/* Botão excluir */
 
 .btn-excluir {
     background-color: var(--cor-perigo);
@@ -265,40 +279,43 @@ main p{
     font-size: 14px;
     display: block;
     margin: 18px auto 0;
-    }
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
 .btn-excluir:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-    }
+}
+
+/* Textos das vendas e despesas */
 
 .cliente-venda,
 .descricao-despesa {
     color: var(--cor-texto-suave);
     font-size: 15px;
     font-weight: 500;
-    }
+}
 
 .valor-venda,
 .valor-despesa {
     color: var(--cor-principal);
     font-size: 20px;
     font-weight: 700;
-    }
+}
 
 .data-venda,
 .data-despesa {
     color: var(--cor-texto-suave);
     font-size: 15px;
     font-weight: 500;
-    }
+}
 
 .descricao-despesa {
-    color: var(--cor-texto-suave);
-    font-size: 15px;
-    font-weight: 500;
     transform: translateY(8px);
-    }
+}
+
+/* Logo */
 
 .logo {
     display: flex;
@@ -307,38 +324,53 @@ main p{
     justify-content: center;
     gap: 4px;
     text-align: center;
-    }
+}
 
 .logo img {
     width: 45px;
     height: 45px;
     object-fit: contain;
-    }
+}
 
 .logo h1 {
     margin: 0;
     color: var(--cor-principal-escura);
-    }
+}
 
 .logo p {
     margin: 0;
     color: var(--cor-texto-suave);
-    }
+}
 
 /* Página de produtos */
 
+.painel-produtos {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 40px;
+    align-items: start;
+}
+
 .cadastro-produto,
 .produtos-cadastrados {
-    max-width: 800px;
-    margin: 35px auto;
-    padding: 0 20px;
-    }
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .cadastro-produto > h2,
 .cadastro-produto > p,
 .produtos-cadastrados > h2 {
     text-align: center;
-    }
+}
+
+.cadastro-produto > p {
+    color: var(--cor-texto);
+    font-size: 16px;
+}
+
+/* Formulário de produtos */
 
 #form-produto {
     max-width: 600px;
@@ -351,18 +383,25 @@ main p{
     display: flex;
     flex-direction: column;
     gap: 18px;
-    }
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#form-produto:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
 
 #form-produto .campo {
     display: flex;
     flex-direction: column;
     gap: 7px;
-    }
+}
 
 #form-produto label {
     color: var(--cor-principal-escura);
     font-weight: 600;
-    }
+}
 
 #form-produto input {
     width: 100%;
@@ -372,12 +411,12 @@ main p{
     font-size: 16px;
     box-sizing: border-box;
     outline: none;
-    }
+}
 
 #form-produto input:focus {
     border-color: var(--cor-principal);
     box-shadow: 0 0 0 3px rgba(111, 75, 139, 0.12);
-    }
+}
 
 #form-produto button {
     padding: 13px;
@@ -388,15 +427,21 @@ main p{
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    }
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
 #form-produto button:hover {
     background-color: var(--cor-principal-escura);
-    }
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Lista de produtos */
 
 .sem-produtos {
     text-align: center;
-    }
+}
 
 #lista-produtos {
     display: flex;
@@ -404,19 +449,12 @@ main p{
     gap: 14px;
     margin-top: 25px;
     width: 100%;
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
-    }
+}
 
 .item-produto {
-    background-color: var(--cor-fundo-claro);
-    border-radius: 10px;
-    padding: 12px 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    border-left: 4px solid var(--cor-principal-escura);
     width: 100%;
     box-sizing: border-box;
-    }
+}
 
 .item-produto h3 {
     margin: 14px 0;
@@ -424,48 +462,29 @@ main p{
     font-size: 15px;
     font-weight: 500;
     text-align: center;
-    }
-
-.item-produto p {
-    margin: 14px 0;
-    color: var(--cor-texto-suave);
-    font-size: 15px;
-    font-weight: 500;
-    text-align: center;
-    }
-
-.cadastro-produto > p {
-    color: var(--cor-texto);
-    font-size: 16px;
-    }
+}
 
 .item-produto p {
     margin: 7px 0;
     color: var(--cor-texto);
+    font-size: 15px;
+    font-weight: 500;
     text-align: center;
-    }
+}
 
 .preco-produto {
     color: var(--cor-principal) !important;
     font-size: 20px !important;
     font-weight: 700 !important;
-    }
+}
 
-.painel-produtos { 
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 40px;
-    align-items: start;
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
-    }
+/* Responsividade para mobile */
 
-    /* Responsividade p mobile */
+@media (max-width: 800px) {
 
-    @media (max-width: 800px) {
     .resumo,
     .painel-vendas,
-    .painel-despesas, 
+    .painel-despesas,
     .painel-produtos {
         grid-template-columns: 1fr;
     }
@@ -474,7 +493,7 @@ main p{
         flex-wrap: wrap;
         gap: 15px;
         padding: 10px;
-        display:flex;
+        display: flex;
         justify-content: center;
         align-items: center;
     }
@@ -505,10 +524,7 @@ main p{
         font-size: 14px;
     }
 
-    #lista-produtos {
-    grid-template-columns: 1fr;
-    }
-
     #form-produto {
-    padding: 22px;
-    }}
+        padding: 22px;
+    }
+}
