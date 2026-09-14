@@ -351,8 +351,7 @@ main p {
     align-items: start;
 }
 
-.cadastro-produto,
-.produtos-cadastrados {
+.cadastro-produto {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -480,6 +479,10 @@ main p {
 
 .produtos-cadastrados {
     margin-top: 76px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Responsividade para mobile */
