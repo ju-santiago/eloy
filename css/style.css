@@ -223,6 +223,8 @@ main p{
     grid-template-columns: 0.9fr 1.1fr;
     gap: 30px;
     align-items: start;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
     }
 
 .nova-venda h2,
@@ -402,6 +404,8 @@ main p{
     gap: 14px;
     margin-top: 25px;
     width: 100%;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
     }
 
 .item-produto {
@@ -452,6 +456,8 @@ main p{
     grid-template-columns: 0.9fr 1.1fr;
     gap: 40px;
     align-items: start;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
     }
 
     /* Responsividade p mobile */
