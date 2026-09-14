@@ -30,13 +30,15 @@ function mostrarProdutos() {
 
         item.innerHTML = `
             <h3>${produto.nome}</h3>
-            <p>Categoria: ${produto.categoria}</p>
+
             <p class="preco-produto">
                 Preço: ${produto.preco.toLocaleString("pt-BR", {
                     style: "currency",
                     currency: "BRL"
                 })}
             </p>
+            
+            <p>Categoria: ${produto.categoria}</p>
 
               <button class="btn-excluir">
                 Excluir
