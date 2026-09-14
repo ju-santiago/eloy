@@ -441,6 +441,12 @@ main p{
     text-align: center;
     }
 
+.preco-produto {
+    color: var(--cor-principal) !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+}
+
 .painel-produtos { 
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
