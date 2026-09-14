@@ -495,6 +495,10 @@ main p {
         grid-template-columns: 1fr;
     }
 
+    .produtos-cadastrados {
+        margin-top: 0;
+    }
+    
     nav {
         flex-wrap: wrap;
         gap: 15px;
