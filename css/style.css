@@ -2,29 +2,93 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap');
 
 :root {
-    --cor-principal: #704264;
-    --cor-principal-escura: #4f2d47;
-    --cor-fundo: #ecdfe5;
-    --cor-card: #ffffff;
-    --cor-texto: #302b2e;
-    --cor-fundo-claro: #fffaf7;
-    --cor-texto-suave: #766d72;
-    --cor-perigo: #a65369;
-    --cor-perigo-clara: #f8e8ed;
-    --branco: #fef7ff;
+    /* Cores principais do Eloy */
+    --cor-principal: #9A5F83;
+    --cor-principal-escura: #6F435F;
+    --cor-principal-clara: #D0A5C0;
+
+    /* Fundos */
+    --cor-fundo: #1F1A1E;
+    --cor-fundo-claro: #261F25;
+
+    /* Cards */
+    --cor-card: #3A2B36;
+
+    /* Textos */
+    --cor-texto: #F8F2F6;
+    --cor-texto-suave: #B9AAB4;
+
+    /* Destaques */
+    --cor-destaque: #A78BFA;
+    --cor-destaque-clara: #E9E1FF;
+
+    /* Perigo */
+    --cor-perigo: #A65369;
+    --cor-perigo-clara: #F8E8ED;
+
+    /* Branco */
+    --branco: #F2E8EF;
 }
 
 body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    font-family: Arial, sans-serif;
+    font-family: "DM Sans", sans-serif;
     margin: 0;
+
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    top: -180px;
+    right: -150px;
+
+    background: radial-gradient(
+        circle,
+        rgba(154, 95, 131, 0.16),
+        transparent 70%
+    );
+
+    filter: blur(20px);
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    bottom: -200px;
+    left: -150px;
+
+    background: radial-gradient(
+        circle,
+        rgba(167, 139, 250, 0.10),
+        transparent 70%
+    );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+    z-index: -1;
 }
 
 header {
     background-color: var(--cor-fundo-claro);
     padding: 24px 40px;
     text-align: center;
+    border-bottom: 1px solid rgba(208, 165, 192, 0.12);
 }
 
 header h1 {
@@ -54,29 +118,31 @@ header p {
 }
 
 nav {
-    background-color: var(--branco);
+    background-color: rgba(38, 31, 37, 0.92);
     text-align: center;
     padding: 14px 40px;
     display: flex;
     justify-content: center;
-    gap: 48px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    gap: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+    border-bottom: 1px solid rgba(208, 165, 192, 0.08);
 }
 
 nav a {
-    padding: 16px 40px;
-    color: var(--cor-principal);
+    padding: 12px 24px;
+    color: var(--cor-principal-clara);
     text-decoration: none;
-    margin-right: 24px;
-    font-weight: 600;
+    margin-right: 0;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: all 0.25s ease;
 }
 
 nav a:hover {
-    color: var(--cor-principal-escura);
-    background-color: var(--cor-fundo-claro);
-    border-radius: 8px;
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    color: var(--cor-texto);
+    background-color: rgba(154, 95, 131, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(154, 95, 131, 0.12);
 }
 
 main {
@@ -111,16 +177,34 @@ main p {
 }
 
 .card {
-    background-color: var(--cor-card);
-    border-radius: 16px;
+    background: linear-gradient(
+        145deg,
+        rgba(58, 43, 54, 0.96),
+        rgba(38, 31, 37, 0.96)
+    );
+
+    border: 1px solid rgba(208, 165, 192, 0.10);
+    border-radius: 18px;
     padding: 28px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.20),
+        0 0 0 1px rgba(154, 95, 131, 0.03);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+
+    border-color: rgba(208, 165, 192, 0.22);
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.28),
+        0 0 24px rgba(154, 95, 131, 0.10);
 }
 
 .card h3 {
@@ -154,24 +238,45 @@ main p {
 
 .form-venda button:hover,
 .form-despesa button:hover {
-    background-color: var(--cor-principal-escura);
-    transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(
+        135deg,
+        #A96D91,
+        #79506C
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(154, 95, 131, 0.30),
+        0 0 18px rgba(154, 95, 131, 0.12);
+
+    filter: brightness(1.05);
 }
 
-.form-venda,
-.form-despesa {
-    background-color: var(--cor-fundo-claro);
-    padding: 28px;
-    border-radius: 14px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.form-venda button,
+.form-despesa button {
+    background: linear-gradient(
+        135deg,
+        var(--cor-principal),
+        var(--cor-principal-escura)
+    );
 
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    color: #ffffff;
 
-    max-width: 700px;
+    border: 1px solid rgba(208, 165, 192, 0.15);
+
+    padding: 12px;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
 }
 
 .form-venda:hover,
