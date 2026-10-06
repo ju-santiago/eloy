@@ -328,6 +328,7 @@ main p {
     text-align: center;
     letter-spacing: 0.5px;
 }
+
 .card p {
     margin: 0;
 
@@ -498,8 +499,32 @@ main p {
         0 0 22px rgba(154, 95, 131, 0.10);
 }
 
-.item-venda p {
-    margin: 14px 0;
+.item-produto .preco-produto {
+    margin: 0 0 10px;
+
+    color: var(--cor-principal-clara);
+
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.item-produto h3 {
+    margin: 0 0 18px;
+
+    color: var(--cor-texto);
+
+    font-size: 18px;
+    font-weight: 600;
+
+    text-align: left;
+}
+
+.item-produto > p:last-of-type {
+    margin: 0 0 18px;
+
+    color: var(--cor-texto-suave);
+
+    font-size: 14px;
 }
 
 #produto-venda {
@@ -560,22 +585,34 @@ main p {
 /* Botão excluir */
 
 .btn-excluir {
-    background-color: var(--cor-perigo);
-    color: var(--cor-perigo-clara);
-    border: none;
-    padding: 8px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
-    display: block;
-    margin: 18px auto 0;
+      background: rgba(166, 83, 105, 0.15);
 
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: #E9B7C4;
+
+    border: 1px solid rgba(166, 83, 105, 0.25);
+
+    padding: 8px 14px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .btn-excluir:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    background: rgba(166, 83, 105, 0.28);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(166, 83, 105, 0.15);
 }
 
 /* Textos das vendas e despesas */
