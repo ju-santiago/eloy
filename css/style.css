@@ -1,34 +1,35 @@
-```css
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap');
 
 :root {
-    /* Cores principais do Eloy */
     --cor-principal: #9A5F83;
     --cor-principal-escura: #6F435F;
     --cor-principal-clara: #D0A5C0;
 
-    /* Fundos */
     --cor-fundo: #1F1A1E;
     --cor-fundo-claro: #261F25;
 
-    /* Cards */
     --cor-card: #3A2B36;
 
-    /* Textos */
     --cor-texto: #F8F2F6;
     --cor-texto-suave: #B9AAB4;
 
-    /* Destaques */
     --cor-destaque: #A78BFA;
     --cor-destaque-clara: #E9E1FF;
 
-    /* Perigo */
     --cor-perigo: #A65369;
     --cor-perigo-clara: #F8E8ED;
 
-    /* Branco */
     --branco: #F2E8EF;
+}
+
+
+/* =========================
+   BASE
+========================= */
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -36,6 +37,7 @@ body {
     color: var(--cor-texto);
     font-family: "DM Sans", sans-serif;
     margin: 0;
+    min-height: 100vh;
     position: relative;
 }
 
@@ -84,56 +86,79 @@ body::after {
     z-index: -1;
 }
 
+
+/* =========================
+   HEADER
+========================= */
+
 header {
     background-color: var(--cor-fundo-claro);
+
     padding: 24px 40px;
+
     text-align: center;
+
     border-bottom: 1px solid rgba(208, 165, 192, 0.12);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo img {
+    width: 65px;
+    height: 65px;
+
+    object-fit: contain;
+
+    margin-bottom: 4px;
 }
 
 header h1 {
     color: var(--cor-principal);
+
     margin: 0;
+
     font-size: 46px;
     font-weight: 800;
+
     letter-spacing: 1px;
+
     font-family: "DM Serif Display", serif;
 }
 
 header p {
     font-family: "DM Sans", sans-serif;
+
     color: var(--cor-texto-suave);
+
     font-size: 15px;
+
     letter-spacing: 0.5px;
+
     font-weight: 300;
+
+    margin: 6px 0 0;
 }
 
-.ativo {
-    background: linear-gradient(
-        135deg,
-        rgba(154, 95, 131, 0.28),
-        rgba(167, 139, 250, 0.10)
-    );
 
-    color: var(--cor-texto);
-
-    border: 1px solid rgba(208, 165, 192, 0.18);
-
-    box-shadow:
-        0 6px 20px rgba(154, 95, 131, 0.12),
-        inset 0 0 18px rgba(154, 95, 131, 0.05);
-
-    transform: translateY(-1px);
-}
+/* =========================
+   NAVEGAÇÃO
+========================= */
 
 nav {
     background-color: rgba(38, 31, 37, 0.85);
 
     text-align: center;
+
     padding: 14px 40px;
 
     display: flex;
+
     justify-content: center;
+
     gap: 12px;
 
     border-bottom: 1px solid rgba(208, 165, 192, 0.08);
@@ -168,9 +193,34 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
+.ativo {
+    background: linear-gradient(
+        135deg,
+        rgba(154, 95, 131, 0.28),
+        rgba(167, 139, 250, 0.10)
+    );
+
+    color: var(--cor-texto);
+
+    border: 1px solid rgba(208, 165, 192, 0.18);
+
+    box-shadow:
+        0 6px 20px rgba(154, 95, 131, 0.12),
+        inset 0 0 18px rgba(154, 95, 131, 0.05);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+
 main {
     padding: 32px 40px;
+
     position: relative;
+
     z-index: 1;
 }
 
@@ -178,10 +228,12 @@ main::before {
     content: "✦";
 
     position: absolute;
+
     top: 80px;
     right: 8%;
 
     color: rgba(208, 165, 192, 0.35);
+
     font-size: 18px;
 
     text-shadow:
@@ -194,10 +246,12 @@ main::after {
     content: "✧";
 
     position: absolute;
+
     top: 280px;
     left: 5%;
 
     color: rgba(167, 139, 250, 0.30);
+
     font-size: 14px;
 
     text-shadow:
@@ -208,16 +262,651 @@ main::after {
 
 main h2 {
     text-align: center;
-    color: var(--cor-principal-escura);
+
+    color: var(--cor-principal-clara);
+
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
+
     margin-left: 8px;
     margin-right: 8px;
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 30px;
 }
 
 main p {
     text-align: center;
+
     color: var(--cor-texto);
+
     font-size: 16px;
+
     margin-top: 4px;
-```
+}
+
+
+/* =========================
+   CARDS DO RESUMO
+========================= */
+
+.resumo {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 35px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+.card {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(58, 43, 54, 0.98),
+            rgba(43, 32, 40, 0.98)
+        );
+
+    border: 1px solid rgba(208, 165, 192, 0.12);
+
+    border-radius: 18px;
+
+    padding: 26px 24px;
+
+    min-height: 180px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    top: -80px;
+    right: -70px;
+
+    background: radial-gradient(
+        circle,
+        rgba(154, 95, 131, 0.18),
+        transparent 70%
+    );
+
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(208, 165, 192, 0.24);
+
+    box-shadow:
+        0 16px 35px rgba(0, 0, 0, 0.25),
+        0 0 25px rgba(154, 95, 131, 0.08);
+}
+
+.card h3 {
+    margin: 12px 0 8px;
+
+    color: var(--cor-texto);
+
+    font-size: 17px;
+
+    font-weight: 500;
+}
+
+.card p {
+    margin: 0;
+
+    color: var(--cor-principal-clara);
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================
+   ÍCONES DOS CARDS
+========================= */
+
+.icone-card {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(154, 95, 131, 0.22),
+            rgba(167, 139, 250, 0.10)
+        );
+
+    border: 1px solid rgba(208, 165, 192, 0.15);
+
+    box-shadow:
+        inset 0 0 15px rgba(154, 95, 131, 0.05);
+}
+
+.icone-card svg {
+    width: 25px;
+    height: 25px;
+
+    fill: none;
+
+    stroke: var(--cor-principal-clara);
+
+    stroke-width: 1.7;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+
+/* =========================
+   FORMULÁRIOS
+========================= */
+
+.form-venda,
+.form-despesa {
+    width: 100%;
+
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(58, 43, 54, 0.98),
+            rgba(43, 32, 40, 0.98)
+        );
+
+    border: 1px solid rgba(208, 165, 192, 0.12);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.form-venda label,
+.form-despesa label {
+    display: block;
+
+    width: 80%;
+
+    margin: 0 auto 7px;
+
+    color: var(--cor-texto-suave);
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+.form-venda input,
+.form-venda select,
+.form-despesa input,
+.form-despesa select {
+    display: block;
+
+    width: 80%;
+
+    margin: 0 auto 18px;
+
+    padding: 12px 14px;
+
+    box-sizing: border-box;
+
+    background-color: rgba(31, 26, 30, 0.75);
+
+    color: var(--cor-texto);
+
+    border: 1px solid rgba(208, 165, 192, 0.14);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 15px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.form-venda input:focus,
+.form-venda select:focus,
+.form-despesa input:focus,
+.form-despesa select:focus {
+    border-color: var(--cor-principal);
+
+    box-shadow:
+        0 0 0 3px rgba(154, 95, 131, 0.10);
+}
+
+.form-venda button,
+.form-despesa button {
+    display: block;
+
+    width: 80%;
+
+    box-sizing: border-box;
+
+    margin: 8px auto 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cor-principal),
+            var(--cor-principal-escura)
+        );
+
+    color: #ffffff;
+
+    border: 1px solid rgba(208, 165, 192, 0.15);
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+.form-venda button:hover,
+.form-despesa button:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 8px 20px rgba(154, 95, 131, 0.22);
+}
+
+
+/* =========================
+   MENSAGENS
+========================= */
+
+#mensagem-venda,
+#mensagem-despesa {
+    width: 80%;
+
+    margin: 15px auto 0;
+
+    padding: 10px;
+
+    text-align: center;
+
+    color: var(--cor-principal-clara);
+
+    font-size: 14px;
+
+    border-radius: 8px;
+
+    background-color: rgba(154, 95, 131, 0.08);
+
+    display: none;
+}
+
+
+/* =========================
+   LISTA DE VENDAS
+========================= */
+
+#lista-vendas,
+#lista-despesas,
+#lista-produtos {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 30px auto;
+}
+
+.item-venda,
+.item-despesa,
+.item-produto {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(58, 43, 54, 0.96),
+            rgba(43, 32, 40, 0.96)
+        );
+
+    border: 1px solid rgba(208, 165, 192, 0.10);
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.14);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.item-venda:hover,
+.item-despesa:hover,
+.item-produto:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(208, 165, 192, 0.20);
+}
+
+.item-venda p,
+.item-despesa p,
+.item-produto p {
+    text-align: left;
+
+    margin: 7px 0;
+
+    color: var(--cor-texto-suave);
+
+    font-size: 14px;
+}
+
+.item-venda strong,
+.item-despesa strong,
+.item-produto strong {
+    color: var(--cor-texto);
+}
+
+
+/* =========================
+   BOTÃO EXCLUIR
+========================= */
+
+.btn-excluir {
+    display: block;
+
+    margin: 15px 0 0 auto;
+
+    padding: 8px 14px;
+
+    border: 1px solid rgba(166, 83, 105, 0.35);
+
+    border-radius: 8px;
+
+    background-color: rgba(166, 83, 105, 0.10);
+
+    color: #e8aebe;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn-excluir:hover {
+    background-color: rgba(166, 83, 105, 0.22);
+
+    color: var(--cor-perigo-clara);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   PRODUTOS
+========================= */
+
+.produtos-container {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 30px auto;
+}
+
+.produto-form {
+    width: 100%;
+
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(58, 43, 54, 0.98),
+            rgba(43, 32, 40, 0.98)
+        );
+
+    border: 1px solid rgba(208, 165, 192, 0.12);
+
+    border-radius: 18px;
+}
+
+
+/* =========================
+   DECORAÇÕES
+========================= */
+
+.brilho {
+    position: absolute;
+
+    pointer-events: none;
+
+    color: rgba(208, 165, 192, 0.35);
+
+    text-shadow:
+        0 0 12px rgba(208, 165, 192, 0.25);
+}
+
+.brilho-1 {
+    top: 40px;
+    right: 12%;
+
+    font-size: 18px;
+}
+
+.brilho-2 {
+    top: 210px;
+    left: 8%;
+
+    font-size: 14px;
+
+    color: rgba(167, 139, 250, 0.28);
+}
+
+.particula {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background-color: rgba(208, 165, 192, 0.35);
+
+    box-shadow:
+        0 0 10px rgba(208, 165, 192, 0.20);
+
+    pointer-events: none;
+}
+
+.particula-1 {
+    top: 120px;
+    left: 18%;
+}
+
+.particula-2 {
+    top: 350px;
+    right: 20%;
+}
+
+.particula-3 {
+    top: 500px;
+    left: 30%;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 38px;
+    }
+
+    nav {
+        padding: 10px 15px;
+
+        gap: 5px;
+
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 9px 13px;
+
+        font-size: 14px;
+    }
+
+    main {
+        padding: 28px 18px;
+    }
+
+    main h2 {
+        font-size: 26px;
+    }
+
+    .resumo {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+
+        margin-top: 28px;
+    }
+
+    .card {
+        min-height: 165px;
+    }
+
+    .form-venda,
+    .form-despesa,
+    .produto-form {
+        padding: 22px 16px;
+    }
+
+    .form-venda input,
+    .form-venda select,
+    .form-venda button,
+    .form-venda label,
+    .form-despesa input,
+    .form-despesa select,
+    .form-despesa button,
+    .form-despesa label {
+        width: 100%;
+    }
+
+    #mensagem-venda,
+    #mensagem-despesa {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    header p {
+        font-size: 13px;
+    }
+
+    nav a {
+        padding: 8px 10px;
+
+        font-size: 13px;
+    }
+
+    main {
+        padding: 24px 14px;
+    }
+
+    .card {
+        padding: 22px 18px;
+    }
+
+    .card p {
+        font-size: 22px;
+    }
+}
