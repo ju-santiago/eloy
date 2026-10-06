@@ -1,64 +1,117 @@
-const vendasSalvas = localStorage.getItem("vendas");
-const vendas = vendasSalvas ? JSON.parse(vendasSalvas) : [];
+const formulario = document.querySelector("#form-despesa");
+const mensagem = document.querySelector("#mensagem-despesa");
 
 const despesasSalvas = localStorage.getItem("despesas");
+//* busca o que está salvo com o nome "despesas" no localStorage
+
 const despesas = despesasSalvas ? JSON.parse(despesasSalvas) : [];
-
-const agora = new Date();
-const hoje = `${agora.getFullYear()}-${String(agora.getMonth() + 1).padStart(2, "0")}-${String(agora.getDate()).padStart(2, "0")}`;
+//* se houver algo salvo, transforma o JSON em dados JavaScript; senão cria um array vazio
 
 
-// VENDAS DE HOJE
+function mostrarDespesas() {
 
-const vendasHoje = vendas.filter(function(venda) {
-    return venda.data === hoje;
-});
+    const lista = document.querySelector("#lista-despesas");
 
-const quantidadePedidosHoje = vendasHoje.length;
+    console.log("Lista encontrada");
+    console.log("Despesas:", despesas);
 
-const pedidos = document.querySelector("#pedidos-hoje");
+    lista.innerHTML = "";
 
-pedidos.textContent = quantidadePedidosHoje;
+    despesas.forEach(function(despesa, indice) {
+
+        const item = document.createElement("div");
+
+        const valorFormatado = Number(despesa.valor).toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        });
+
+        //* transforma o valor para o formato de real brasileiro
+
+        item.classList.add("item-despesa");
+
+        const partesData = despesa.data.split("-");
+
+        const dataFormatada =
+            `${partesData[2]}/${partesData[1]}/${partesData[0]}`;
+
+        item.innerHTML = `
+            <p class="descricao-despesa">
+                <strong>Descrição:</strong>
+                ${despesa.descricao || "Não informado"}
+            </p>
+
+            <p class="valor-despesa">
+                <strong>Valor:</strong>
+                ${valorFormatado}
+            </p>
+
+            <p class="data-despesa">
+                <strong>Data:</strong>
+                ${dataFormatada}
+            </p>
+
+            <button class="btn-excluir">Excluir</button>
+        `;
+
+        lista.appendChild(item);
+
+        const botaoExcluir = item.querySelector(".btn-excluir");
+
+        botaoExcluir.addEventListener("click", function() {
+
+            const confirmarExclusao =
+                confirm("Deseja realmente excluir esta despesa?");
+
+            if (confirmarExclusao) {
+
+                despesas.splice(indice, 1);
+
+                localStorage.setItem(
+                    "despesas",
+                    JSON.stringify(despesas)
+                );
+
+                mostrarDespesas();
+            }
+        });
+
+    });
+}
 
 
-let totalVendasHoje = 0;
+mostrarDespesas();
 
-vendasHoje.forEach(function(venda) {
-    totalVendasHoje += Number(venda.valor);
-});
+formulario.addEventListener("submit", function(event) {
 
-const cardVendasHoje = document.querySelector("#vendas-hoje");
+    event.preventDefault();
 
-cardVendasHoje.textContent = totalVendasHoje.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL"
-});
+    const valor = document.querySelector("#valor").value;
+    const descricao = document.querySelector("#descricao").value;
+    const data = document.querySelector("#data").value;
 
+    const despesa = {
+        valor: valor,
+        descricao: descricao,
+        data: data
+    };
 
-// DESPESAS DE HOJE
+    despesas.unshift(despesa);
 
-const despesasHoje = despesas.filter(function(despesa) {
-    return despesa.data === hoje;
-});
+    localStorage.setItem(
+        "despesas",
+        JSON.stringify(despesas)
+    );
 
-let totalDespesasHoje = 0;
+    mostrarDespesas();
 
-despesasHoje.forEach(function(despesa) {
-    totalDespesasHoje += Number(despesa.valor);
-});
+    formulario.reset();
 
-const cardDespesasHoje = document.querySelector("#despesas-hoje");
+    mensagem.textContent = "Despesa registrada com sucesso!";
+    mensagem.style.display = "block";
 
-cardDespesasHoje.textContent = totalDespesasHoje.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL"
-});
+    setTimeout(function() {
+        mensagem.style.display = "none";
+    }, 2000);
 
-const lucroEstimado = totalVendasHoje - totalDespesasHoje;
-
-const cardLucroEstimado = document.querySelector("#lucro-estimado");
-
-cardLucroEstimado.textContent = lucroEstimado.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL"
 });
